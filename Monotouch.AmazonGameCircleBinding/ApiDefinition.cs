@@ -6,61 +6,259 @@ using MonoTouch.UIKit;
 
 namespace Monotouch.AmazonGameCircleBinding
 {
-	// The first step to creating a binding is to add your native library ("libNativeLibrary.a")
-	// to the project by right-clicking (or Control-clicking) the folder containing this source
-	// file and clicking "Add files..." and then simply select the native library (or libraries)
-	// that you want to bind.
-	//
-	// When you do that, you'll notice that MonoDevelop generates a code-behind file for each
-	// native library which will contain a [LinkWith] attribute. MonoDevelop auto-detects the
-	// architectures that the native library supports and fills in that information for you,
-	// however, it cannot auto-detect any Frameworks or other system libraries that the
-	// native library may depend on, so you'll need to fill in that information yourself.
-	//
-	// Once you've done that, you're ready to move on to binding the API...
-	//
-	//
-	// Here is where you'd define your API definition for the native Objective-C library.
-	//
-	// For example, to bind the following Objective-C class:
-	//
-	//     @interface Widget : NSObject {
-	//     }
-	//
-	// The C# binding would look like this:
-	//
-	//     [BaseType (typeof (NSObject))]
-	//     interface Widget {
-	//     }
-	//
-	// To bind Objective-C properties, such as:
-	//
-	//     @property (nonatomic, readwrite, assign) CGPoint center;
-	//
-	// You would add a property definition in the C# interface like so:
-	//
-	//     [Export ("center")]
-	//     PointF Center { get; set; }
-	//
-	// To bind an Objective-C method, such as:
-	//
-	//     -(void) doSomething:(NSObject *)object atIndex:(NSInteger)index;
-	//
-	// You would add a method definition to the C# interface like so:
-	//
-	//     [Export ("doSomething:atIndex:")]
-	//     void DoSomething (NSObject object, int index);
-	//
-	// Objective-C "constructors" such as:
-	//
-	//     -(id)initWithElmo:(ElmoMuppet *)elmo;
-	//
-	// Can be bound as:
-	//
-	//     [Export ("initWithElmo:")]
-	//     IntPtr Constructor (ElmoMuppet elmo);
-	//
-	// For more information, see http://docs.xamarin.com/ios/advanced_topics/binding_objective-c_libraries
-	//
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AIVariation {
+
+		[Export ("projectName")]
+		string ProjectName { get; }
+
+		[Export ("name")]
+		string Name { get; }
+
+		[Export ("variableAsInt:withDefault:")]
+		int VariableAsInt (string variableName, int defaultValue);
+
+		[Export ("variableAsLongLong:withDefault:")]
+		long VariableAsLongLong (string variableName, long defaultValue);
+
+		[Export ("variableAsFloat:withDefault:")]
+		float VariableAsFloat (string variableName, float defaultValue);
+
+		[Export ("variableAsDouble:withDefault:")]
+		double VariableAsDouble (string variableName, double defaultValue);
+
+		[Export ("variableAsBool:withDefault:")]
+		bool VariableAsBool (string variableName, bool defaultValue);
+
+		[Export ("variableAsString:withDefault:")]
+		string VariableAsString (string variableName, string defaultValue);
+
+		[Export ("containsVariable:")]
+		bool ContainsVariable (string variableName);
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AIInsightsCredentials {
+
+		[Export ("applicationKey")]
+		string ApplicationKey { get; }
+
+		[Export ("privateKey")]
+		string PrivateKey { get; }
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AIInsightsOptions {
+
+		[Export ("allowEventCollection")]
+		bool AllowEventCollection { get; }
+
+		[Export ("allowWANDelivery")]
+		bool AllowWANDelivery { get; }
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AIEvent {
+
+		[Export ("eventType")]
+		string EventType { get; }
+
+		[Export ("addAttribute:forKey:")]
+		void AddAttribute (string theValue, string theKey);
+
+		[Export ("addMetric:forKey:")]
+		void AddMetric (NSNumber theValue, string theKey);
+
+		[Export ("attributeForKey:")]
+		string AttributeForKey (string theKey);
+
+		[Export ("metricForKey:")]
+		NSNumber MetricForKey (string theKey);
+
+		[Export ("hasAttributeForKey:")]
+		bool HasAttributeForKey (string theKey);
+
+		[Export ("hasMetricForKey:")]
+		bool HasMetricForKey (string theKey);
+
+		//[Export ("allAttributes"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/AIEvent.h", Line = 113)]
+		[Export ("allAttributes")]
+		NSDictionary AllAttributes { get; }
+
+		//[Export ("allMetrics"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/AIEvent.h", Line = 120)]
+		[Export ("allMetrics")]
+		NSDictionary AllMetrics { get; }
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AIEventClient {
+
+		[Export ("addGlobalAttribute:forKey:")]
+		void AddGlobalAttribute (string theValue, string theKey);
+
+		[Export ("addGlobalAttribute:forKey:forEventType:")]
+		void AddGlobalAttribute (string theValue, string theKey, string theEventType);
+
+		[Export ("addGlobalMetric:forKey:")]
+		void AddGlobalMetric (NSNumber theValue, string theKey);
+
+		[Export ("addGlobalMetric:forKey:forEventType:")]
+		void AddGlobalMetric (NSNumber theValue, string theKey, string theEventType);
+
+		[Export ("removeGlobalAttributeForKey:")]
+		void RemoveGlobalAttributeForKey (string theKey);
+
+		[Export ("removeGlobalAttributeForKey:forEventType:")]
+		void RemoveGlobalAttributeForKey (string theKey, string theEventType);
+
+		[Export ("removeGlobalMetricForKey:")]
+		void RemoveGlobalMetricForKey (string theKey);
+
+		[Export ("removeGlobalMetricForKey:forEventType:")]
+		void RemoveGlobalMetricForKey (string theKey, string theEventType);
+
+		[Export ("recordEvent:")]
+		void RecordEvent (AIEvent theEvent);
+
+		[Export ("createEventWithEventType:")]
+		AIEvent CreateEventWithEventType (string theEventType);
+
+		[Export ("submitEvents")]
+		void SubmitEvents ();
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AIUserProfile {
+
+		[Export ("dimensions")]
+		NSDictionary Dimensions { get; }
+
+		[Export ("addDimensionAsNumber:forName:")]
+		AIUserProfile AddDimensionAsNumber (NSNumber theValue, string theName);
+
+		[Export ("addDimensionAsString:forName:")]
+		AIUserProfile AddDimensionAsString (string theValue, string theName);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface AIAmazonInsights {
+
+//		[Export ("abTestClient")]
+//		AIABTestClient AbTestClient { get; }
+
+		[Export ("eventClient")]
+		AIEventClient EventClient { get; }
+
+		[Export ("userProfile")]
+		AIUserProfile UserProfile { get; }
+
+		[Static, Export ("credentialsWithApplicationKey:withPrivateKey:")]
+		AIInsightsCredentials CredentialsWithApplicationKey (string theApplicationKey, string thePrivateKey);
+
+		//[Static, Export ("defaultOptions"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/AIAmazonInsights.h", Line = 134)]
+		[Static, Export ("defaultOptions")]
+		AIInsightsOptions DefaultOptions { get; }
+
+		[Static, Export ("optionsWithAllowEventCollection:withAllowWANDelivery:")]
+		AIInsightsOptions OptionsWithAllowEventCollection (bool allowEventCollection, bool allowWANDelivery);
+
+		[Static, Export ("insightsWithCredentials:")]
+		AIAmazonInsights InsightsWithCredentials (AIInsightsCredentials theCredentials);
+
+		[Static, Export ("insightsWithCredentials:withOptions:")]
+		AIAmazonInsights InsightsWithCredentials (AIInsightsCredentials theCredentials, AIInsightsOptions theOptions);
+
+//		[Static, Export ("insightsWithCredentials:withOptions:withCompletionBlock:")]
+//		AIAmazonInsights InsightsWithCredentials (AIInsightsCredentials theCredentials, AIInsightsOptions theOptions, AIInitializationCompletionBlock completionBlock);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface AIMonetizationEventBuilder {
+
+		//[Export ("build"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 37)]
+		[Export ("build")]
+		AIEvent Build { get; }
+
+		//[Export ("isValid"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 43)]
+		[Export ("isValid")]
+		bool IsValid { get; }
+
+		[Export ("initWithEventClient:")]
+		IntPtr Constructor (AIEventClient theEventClient);
+
+		//[Export ("productId"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 55), Verify ("Backing setter method to ObjC property removed: setProductId:", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 61)]
+		[Export ("productId")]
+		string ProductId { get; set; }
+
+		//[Export ("quantity"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 67), Verify ("Backing setter method to ObjC property removed: setQuantity:", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 73)]
+		[Export ("quantity")]
+		int Quantity { get; set; }
+
+		//[Export ("itemPrice"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 79), Verify ("Backing setter method to ObjC property removed: setItemPrice:", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 85)]
+		[Export ("itemPrice")]
+		double ItemPrice { get; set; }
+
+		//[Export ("formattedItemPrice"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 91), Verify ("Backing setter method to ObjC property removed: setFormattedItemPrice:", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 97)]
+		[Export ("formattedItemPrice")]
+		string FormattedItemPrice { get; set; }
+
+		//[Export ("transactionId"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 103), Verify ("Backing setter method to ObjC property removed: setTransactionId:", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 109)]
+		[Export ("transactionId")]
+		string TransactionId { get; set; }
+
+		//[Export ("currency"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 115), Verify ("Backing setter method to ObjC property removed: setCurrency:", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 121)]
+		[Export ("currency")]
+		string Currency { get; set; }
+
+		//[Export ("store"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 128), Verify ("Backing setter method to ObjC property removed: setStore:", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIMonetizationEventBuilder.h", Line = 134)]
+		[Export ("store")]
+		string Store { get; set; }
+	}
+
+	[BaseType (typeof (AIMonetizationEventBuilder))]
+	public partial interface AIAppleMonetizationEventBuilder {
+
+		[Static, Export ("builderWithEventClient:")]
+		AIAppleMonetizationEventBuilder BuilderWithEventClient (AIEventClient theEventClient);
+
+		[Export ("withProductId:")]
+		void WithProductId (string theProductId);
+
+		[Export ("withItemPrice:andPriceLocale:")]
+		void WithItemPrice (double theItemPrice, NSLocale thePriceLocale);
+
+		[Export ("withQuantity:")]
+		void WithQuantity (int theQuantity);
+
+		[Export ("withTransactionId:")]
+		void WithTransactionId (string theTransactionId);
+
+		//[Export ("build"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIAppleMonetizationEventBuilder.h", Line = 129)]
+		[Export ("build")]
+		AIEvent Build { get; }
+	}
+
+	[BaseType (typeof (AIMonetizationEventBuilder))]
+	public partial interface AIVirtualMonetizationEventBuilder {
+
+		[Static, Export ("builderWithEventClient:")]
+		AIVirtualMonetizationEventBuilder BuilderWithEventClient (AIEventClient theEventClient);
+
+		[Export ("withProductId:")]
+		void WithProductId (string theProductId);
+
+		[Export ("withItemPrice:")]
+		void WithItemPrice (double theItemPrice);
+
+		[Export ("withQuantity:")]
+		void WithQuantity (int theQuantity);
+
+		[Export ("withCurrency:")]
+		void WithCurrency (string theCurrency);
+
+		//[Export ("build"), Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/AmazonInsights/AmazonInsightsSDK.framework/Headers/monetization/AIVirtualMonetizationEventBuilder.h", Line = 85)]
+		[Export ("build")]
+		AIEvent Build { get; }
+	}
 }
 

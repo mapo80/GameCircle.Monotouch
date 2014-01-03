@@ -52,9 +52,6 @@
     <ObjcBindingNativeLibrary Include="AmazonInsightsSDK.a" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmazonInsightsSDK.linkwith.cs">
-      <DependentUpon>AmazonInsightsSDK.a</DependentUpon>
-    </Compile>
     <Compile Include="GameCircle.linkwith.cs">
       <DependentUpon>GameCircle.a</DependentUpon>
     </Compile>
@@ -91,6 +88,9 @@
     <Compile Include="Lib\WhispersyncClient\DataModel\AGSSyncableStringElement.cs" />
     <Compile Include="Lib\WhispersyncClient\DataModel\AGSSyncableStringList.cs" />
     <Compile Include="Lib\WhispersyncClient\DataModel\AGSSyncableStringSet.cs" />
+    <Compile Include="AmazonInsightsSDK.linkwith.cs">
+      <DependentUpon>AmazonInsightsSDK.a</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Lib\Commom\MiniJSON\LICENSE.txt" />
