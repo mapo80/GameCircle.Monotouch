@@ -48,13 +48,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Xamarin.ObjcBinding.CSharp.targets" />
   <ItemGroup>
-    <ObjcBindingNativeLibrary Include="GameCircle.a" />
     <ObjcBindingNativeLibrary Include="AmazonInsightsSDK.a" />
+    <ObjcBindingNativeLibrary Include="GameCircle-MD5.a" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameCircle.linkwith.cs">
-      <DependentUpon>GameCircle.a</DependentUpon>
-    </Compile>
     <Compile Include="Lib\AGSClient.cs" />
     <Compile Include="Lib\GameCircleManager.cs" />
     <Compile Include="Lib\AchievementsClient\AGSAchievementsClient.cs" />
@@ -90,6 +87,9 @@
     <Compile Include="Lib\WhispersyncClient\DataModel\AGSSyncableStringSet.cs" />
     <Compile Include="AmazonInsightsSDK.linkwith.cs">
       <DependentUpon>AmazonInsightsSDK.a</DependentUpon>
+    </Compile>
+    <Compile Include="GameCircle-MD5.linkwith.cs">
+      <DependentUpon>GameCircle-MD5.a</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

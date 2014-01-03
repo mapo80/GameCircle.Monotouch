@@ -4,6 +4,9 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
+using Monotouch.AmazonGameCircleBinding;
+
+
 namespace Monotouch.AmazonGameCircleTestApp
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the
@@ -29,6 +32,8 @@ namespace Monotouch.AmazonGameCircleTestApp
 			viewController = new Monotouch_AmazonGameCircleTestAppViewController ();
 			window.RootViewController = viewController;
 			window.MakeKeyAndVisible ();
+
+			//AGSClient.Init (true, true, false);
 
 			AGSClient.Init (true, true, false);
 
