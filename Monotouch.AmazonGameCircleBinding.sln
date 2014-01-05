@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monotouch.AmazonGameCircleTestApp", "Monotouch.AmazonGameCircleTestApp\Monotouch.AmazonGameCircleTestApp.csproj", "{5025DB16-5C1C-4EFA-81C9-2113ECBCB8C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monotouch.AmazonGameCircleBinding", "Monotouch.AmazonGameCircleBinding\Monotouch.AmazonGameCircleBinding.csproj", "{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonGameCircle", "AmazonGameCircle\AmazonGameCircle.csproj", "{63652F10-DE37-421F-A328-CAD39612D623}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,22 +33,22 @@ Global
 		{5025DB16-5C1C-4EFA-81C9-2113ECBCB8C2}.Release|iPhone.Build.0 = Release|iPhone
 		{5025DB16-5C1C-4EFA-81C9-2113ECBCB8C2}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{5025DB16-5C1C-4EFA-81C9-2113ECBCB8C2}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.AppStore|iPhone.ActiveCfg = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.AppStore|iPhone.Build.0 = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Release|iPhone.Build.0 = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Release|iPhone.Build.0 = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{63652F10-DE37-421F-A328-CAD39612D623}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Monotouch.AmazonGameCircleTestApp\Monotouch.AmazonGameCircleTestApp.csproj

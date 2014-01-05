@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="GameCircle.bundle\GameCircleContents.zip" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -122,11 +123,15 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Library\" />
+    <Folder Include="GameCircle.bundle\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Monotouch.AmazonGameCircleBinding\Monotouch.AmazonGameCircleBinding.csproj">
-      <Project>{B78C73ED-AE74-413D-B375-1FFD5DAA7DAC}</Project>
-      <Name>Monotouch.AmazonGameCircleBinding</Name>
+    <ProjectReference Include="..\AmazonGameCircle\AmazonGameCircle.csproj">
+      <Project>{63652F10-DE37-421F-A328-CAD39612D623}</Project>
+      <Name>AmazonGameCircle</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
   </ItemGroup>
 </Project>
