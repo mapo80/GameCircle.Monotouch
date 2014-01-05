@@ -31,7 +31,7 @@
 	<key>XSAppIconAssets</key>
 	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
 	<key>APIKey</key>
-	<string>eyJhbGciOiJSU0EtU0hBMjU2IiwidmVyIjoiMSJ9.eyJhcHBGYW1pbHlJZCI6ImM3M2E2MTYzLTI4NDAtNGFkZC1iNDIxLTIxZGFmNjkzZDZmZCIsImlkIjoiZGUwMjVlYWItNzU0NC0xMWUzLTg0ODMtYjE1Y2Q4NDI1ZmFiIiwiYXBwSWQiOiJhbXpuMS5hcHBsaWNhdGlvbi1jbGllbnQuMWNlMzYwNjk0MDM5NGIwOGJiODVkNDFiNTcwZGEwYzEiLCJidW5kbGVTZWVkSWQiOiJjb20uY3J1Y2l2ZXJiYS5hcHAiLCJpc3MiOiJBbWF6b24iLCJidW5kbGVJZCI6ImNvbS5jcnVjaXZlcmJhLmFwcCIsInZlciI6IjIiLCJhcHBWYXJpYW50SWQiOiJhbXpuMS5hcHBsaWNhdGlvbi1jbGllbnQuMWNlMzYwNjk0MDM5NGIwOGJiODVkNDFiNTcwZGEwYzEiLCJ0eXBlIjoiQVBJS2V5IiwiaWF0IjoiMTM4ODg0MjQzOTQ0NiIsImNsaWVudElkIjoiYW16bjEuYXBwbGljYXRpb24tb2EyLWNsaWVudC44NGRkMWE4MTFkMjM0MWJlYTYxYmY3YWNhMWQzYTZmNyJ9.b+tiHOXVUeW3rcqgn93GxHbvVN3/j/M9xY0UOU2z549qXjjYLqGcTEJC2ZmrqgphZB3y8JckP1wZx76VJKN87vY6TOiyoca71BW9c6OGd49HCtwsAy04k8FnyzjLCLTndHalgv/MgEeUgcOcf2afSQgwUhwRVuJjR3AJbyF+MSY+MhwaXbCoqya1xOj8mZ/TvSlLXHPYbvkfM43XtObvqTYHBFQVXf6hHlovpMGgw5BJ3WEtkdL/UvNAS7fGnMzehAsxwBfBxmO5i1OzgSp68aMHv6RF2TJXFuLStDrBY+uImsmFPBtrLMvpa9POjhonfwADHFSTDv3FBv7Qq7ah8w==</string>
+	<string></string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -39,10 +39,10 @@
 			<string>Viewer</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>amzn-com.cruciverba.app</string>
+				<string></string>
 			</array>
 			<key>CFBundleURLName</key>
-			<string>com.cruciverba.app</string>
+			<string></string>
 		</dict>
 	</array>
 	<key>UIStatusBarHidden</key>
