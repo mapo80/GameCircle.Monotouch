@@ -330,240 +330,240 @@ namespace AmazonGameCircle {
 		NSString AGScoreFormatUnknown { get; }
 	}
 
-//	[Model, BaseType (typeof (NSObject))]
-//	public partial interface AGSyncableAccumulatingNumber {
-//
-//		[Export ("value", ArgumentSemantic.Retain)]
-//		NSNumber Value { get; }
-//
-//		[Export ("incrementValue:")]
-//		void IncrementValue (NSNumber delta);
-//
-//		[Export ("decrementValue:")]
-//		void DecrementValue (NSNumber delta);
-//	}
-//
-//	[Model, BaseType (typeof (NSObject))]
-//	public partial interface AGSyncableDeveloperString {
-//
-//		[Export ("inConflict")]
-//		bool InConflict { get; }
-//
-//		[Export ("isSet")]
-//		bool IsSet { get; }
-//
-//		[Export ("cloudValue", ArgumentSemantic.Copy)]
-//		string CloudValue { get; }
-//
-//		[Export ("value", ArgumentSemantic.Copy)]
-//		string Value { get; set; }
-//
-//		[Export ("markAsResolved")]
-//		void MarkAsResolved ();
-//	}
-//
-//	[Model, BaseType (typeof (NSObject))]
-//	public partial interface AGSyncableElement {
-//
-//		[Export ("timestamp", ArgumentSemantic.Retain)]
-//		NSDate Timestamp { get; }
-//
-//		[Export ("metadata", ArgumentSemantic.Retain)]
-//		NSDictionary Metadata { get; }
-//	}
-//
-//	[Model]
-//	public partial interface AGSyncableNumberElement : AGSyncableElement {
-//
-//		[Export ("value", ArgumentSemantic.Retain)]
-//		NSNumber Value { get; }
-//	}
-//
-//	[Model]
-//	public partial interface AGSyncableNumber : AGSyncableNumberElement {
-//
-//		[Export ("isSet")]
-//		bool IsSet { get; }
-//
-//		[Export ("value")]//]//, Verify ("ObjC method massaged into setter property", "/Users/matteo/Desktop/Headers/AGSyncableNumber.h", Line = 35)]
-//		NSNumber Value { set; }
-//
-//		[Export ("setValue:withMetadata:")]
-//		void SetValue (NSNumber value, NSDictionary metadata);
-//	}
-//
-//	[Model, BaseType (typeof (NSObject))]
-//	public partial interface AGSyncableList {
-//
-//		[Export ("isSet")]
-//		bool IsSet { get; }
-//
-//		[Export ("capacity")]
-//		int Capacity { get; set; }
-//
-//		[Export ("values")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGSyncableList.h", Line = 41)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGSyncableList.h", Line = 41)]
-//		NSObject [] Values { get; }
-//	}
-//
-//	[Model]
-//	public partial interface AGSyncableNumberList : AGSyncableList {
-//
-//		[Export ("addValue:")]
-//		void AddValue (NSNumber value);
-//
-//		[Export ("addValue:withMetadata:")]
-//		void AddValue (NSNumber value, NSDictionary metadata);
-//	}
-//
-//	[Model]
-//	public partial interface AGSyncableStringElement : AGSyncableElement {
-//
-//		[Export ("value", ArgumentSemantic.Copy)]
-//		string Value { get; }
-//	}
-//
-//	[Model]
-//	public partial interface AGSyncableString : AGSyncableStringElement {
-//
-//		[Export ("isSet")]
-//		bool IsSet { get; }
-//
-//		[Export ("value")]//, Verify ("ObjC method massaged into setter property", "/Users/matteo/Desktop/Headers/AGSyncableString.h", Line = 31)]
-//		string Value { set; }
-//
-//		[Export ("setValue:withMetadata:")]
-//		void SetValue (string value, NSDictionary metadata);
-//	}
-//
-//	[Model]
-//	public partial interface AGSyncableStringList : AGSyncableList {
-//
-//		[Export ("addValue:")]
-//		void AddValue (string value);
-//
-//		[Export ("addValue:withMetadata:")]
-//		void AddValue (string value, NSMutableDictionary metadata);
-//	}
-//
-//	[Model, BaseType (typeof (NSObject))]
-//	public partial interface AGSyncableStringSet {
-//
-//		[Export ("isSet")]
-//		bool IsSet { get; }
-//
-//		[Export ("addValue:")]
-//		void AddValue (string value);
-//
-//		[Export ("addValue:withMetadata:")]
-//		void AddValue (string value, NSMutableDictionary metadata);
-//
-//		[Export ("contains:")]
-//		bool Contains (string value);
-//
-//		[Export ("valueWithName:")]
-//		AGSyncableStringElement ValueWithName (string name);
-//
-//		[Export ("values")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGSyncableStringSet.h", Line = 70)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGSyncableStringSet.h", Line = 70)]
-//		NSObject [] Values { get; }
-//	}
-//
-//	[BaseType (typeof (NSObject))]
-//	public partial interface AGGameDataMap {
-//
-//		[Export ("highestNumberForKey:")]
-//		AGSyncableNumber HighestNumberForKey (string key);
-//
-//		[Export ("allHighestNumberKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 57)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 57)]
-//		NSObject [] AllHighestNumberKeys { get; }
-//
-//		[Export ("lowestNumberForKey:")]
-//		AGSyncableNumber LowestNumberForKey (string key);
-//
-//		[Export ("allLowestNumberKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 79)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 79)]
-//		NSObject [] AllLowestNumberKeys { get; }
-//
-//		[Export ("latestNumberForKey:")]
-//		AGSyncableNumber LatestNumberForKey (string key);
-//
-//		[Export ("allLatestNumberKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 101)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 101)]
-//		NSObject [] AllLatestNumberKeys { get; }
-//
-//		[Export ("highNumberListForKey:")]
-//		AGSyncableNumberList HighNumberListForKey (string key);
-//
-//		[Export ("allHighNumberListKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 124)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 124)]
-//		NSObject [] AllHighNumberListKeys { get; }
-//
-//		[Export ("lowNumberListForKey:")]
-//		AGSyncableNumberList LowNumberListForKey (string key);
-//
-//		[Export ("allLowNumberListKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 147)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 147)]
-//		NSObject [] AllLowNumberListKeys { get; }
-//
-//		[Export ("latestNumberListForKey:")]
-//		AGSyncableNumberList LatestNumberListForKey (string key);
-//
-//		[Export ("allLatestNumberListKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 171)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 171)]
-//		NSObject [] AllLatestNumberListKeys { get; }
-//
-//		[Export ("accumulatingNumberForKey:")]
-//		AGSyncableAccumulatingNumber AccumulatingNumberForKey (string key);
-//
-//		[Export ("allAccumulatingNumberKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 193)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 193)]
-//		NSObject [] AllAccumulatingNumberKeys { get; }
-//
-//		[Export ("latestStringForKey:")]
-//		AGSyncableString LatestStringForKey (string key);
-//
-//		[Export ("allLatestStringKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 215)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 215)]
-//		NSObject [] AllLatestStringKeys { get; }
-//
-//		[Export ("developerStringForKey:")]
-//		AGSyncableDeveloperString DeveloperStringForKey (string key);
-//
-//		[Export ("allDeveloperStringKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 238)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 238)]
-//		NSObject [] AllDeveloperStringKeys { get; }
-//
-//		[Export ("latestStringListForKey:")]
-//		AGSyncableStringList LatestStringListForKey (string key);
-//
-//		[Export ("allLatestStringListKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 262)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 262)]
-//		NSObject [] AllLatestStringListKeys { get; }
-//
-//		[Export ("stringSetForKey:")]
-//		AGSyncableStringSet StringSetForKey (string key);
-//
-//		[Export ("allStringSetKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 284)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 284)]
-//		NSObject [] AllStringSetKeys { get; }
-//
-//		[Export ("mapForKey:")]
-//		AGGameDataMap MapForKey (string key);
-//
-//		[Export ("allMapKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 306)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 306)]
-//		NSObject [] AllMapKeys { get; }
-//
-//		[Field ("AGLeaderboardFilterFriendsAllTime", "__Internal")]
-//		NSString AGLeaderboardFilterFriendsAllTime { get; }
-//
-//		[Field ("AGLeaderboardFilterGlobalAllTime", "__Internal")]
-//		NSString AGLeaderboardFilterGlobalAllTime { get; }
-//
-//		[Field ("AGLeaderboardFilterGlobalDay", "__Internal")]
-//		NSString AGLeaderboardFilterGlobalDay { get; }
-//
-//		[Field ("AGLeaderboardFilterGlobalWeek", "__Internal")]
-//		NSString AGLeaderboardFilterGlobalWeek { get; }
-//
-//		[Field ("AGScoreFormatDuration", "__Internal")]
-//		NSString AGScoreFormatDuration { get; }
-//
-//		[Field ("AGScoreFormatNumeric", "__Internal")]
-//		NSString AGScoreFormatNumeric { get; }
-//
-//		[Field ("AGScoreFormatUnknown", "__Internal")]
-//		NSString AGScoreFormatUnknown { get; }
-//	}
-//
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AGSyncableAccumulatingNumber {
+
+		[Export ("value", ArgumentSemantic.Retain)]
+		NSNumber Value { get; }
+
+		[Export ("incrementValue:")]
+		void IncrementValue (NSNumber delta);
+
+		[Export ("decrementValue:")]
+		void DecrementValue (NSNumber delta);
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AGSyncableDeveloperString {
+
+		[Export ("inConflict")]
+		bool InConflict { get; }
+
+		[Export ("isSet")]
+		bool IsSet { get; }
+
+		[Export ("cloudValue", ArgumentSemantic.Copy)]
+		string CloudValue { get; }
+
+		[Export ("value", ArgumentSemantic.Copy)]
+		string Value { get; set; }
+
+		[Export ("markAsResolved")]
+		void MarkAsResolved ();
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AGSyncableElement {
+
+		[Export ("timestamp", ArgumentSemantic.Retain)]
+		NSDate Timestamp { get; }
+
+		[Export ("metadata", ArgumentSemantic.Retain)]
+		NSDictionary Metadata { get; }
+	}
+
+	[Model]
+	public partial interface AGSyncableNumberElement : AGSyncableElement {
+
+		[Export ("value", ArgumentSemantic.Retain)]
+		NSNumber Value { get; }
+	}
+
+	[Model]
+	public partial interface AGSyncableNumber : AGSyncableNumberElement {
+
+		[Export ("isSet")]
+		bool IsSet { get; }
+
+		[Export ("value")]//]//, Verify ("ObjC method massaged into setter property", "/Users/matteo/Desktop/Headers/AGSyncableNumber.h", Line = 35)]
+		NSNumber Value { set; }
+
+		[Export ("setValue:withMetadata:")]
+		void SetValue (NSNumber value, NSDictionary metadata);
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AGSyncableList {
+
+		[Export ("isSet")]
+		bool IsSet { get; }
+
+		[Export ("capacity")]
+		int Capacity { get; set; }
+
+		[Export ("values")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGSyncableList.h", Line = 41)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGSyncableList.h", Line = 41)]
+		NSObject [] Values { get; }
+	}
+
+	[Model]
+	public partial interface AGSyncableNumberList : AGSyncableList {
+
+		[Export ("addValue:")]
+		void AddValue (NSNumber value);
+
+		[Export ("addValue:withMetadata:")]
+		void AddValue (NSNumber value, NSDictionary metadata);
+	}
+
+	[Model]
+	public partial interface AGSyncableStringElement : AGSyncableElement {
+
+		[Export ("value", ArgumentSemantic.Copy)]
+		string Value { get; }
+	}
+
+	[Model]
+	public partial interface AGSyncableString : AGSyncableStringElement {
+
+		[Export ("isSet")]
+		bool IsSet { get; }
+
+		[Export ("value")]//, Verify ("ObjC method massaged into setter property", "/Users/matteo/Desktop/Headers/AGSyncableString.h", Line = 31)]
+		string Value { set; }
+
+		[Export ("setValue:withMetadata:")]
+		void SetValue (string value, NSDictionary metadata);
+	}
+
+	[Model]
+	public partial interface AGSyncableStringList : AGSyncableList {
+
+		[Export ("addValue:")]
+		void AddValue (string value);
+
+		[Export ("addValue:withMetadata:")]
+		void AddValue (string value, NSMutableDictionary metadata);
+	}
+
+	[Model, BaseType (typeof (NSObject))]
+	public partial interface AGSyncableStringSet {
+
+		[Export ("isSet")]
+		bool IsSet { get; }
+
+		[Export ("addValue:")]
+		void AddValue (string value);
+
+		[Export ("addValue:withMetadata:")]
+		void AddValue (string value, NSMutableDictionary metadata);
+
+		[Export ("contains:")]
+		bool Contains (string value);
+
+		[Export ("valueWithName:")]
+		AGSyncableStringElement ValueWithName (string name);
+
+		[Export ("values")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGSyncableStringSet.h", Line = 70)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGSyncableStringSet.h", Line = 70)]
+		NSObject [] Values { get; }
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface AGGameDataMap {
+
+		[Export ("highestNumberForKey:")]
+		AGSyncableNumber HighestNumberForKey (string key);
+
+		[Export ("allHighestNumberKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 57)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 57)]
+		NSObject [] AllHighestNumberKeys { get; }
+
+		[Export ("lowestNumberForKey:")]
+		AGSyncableNumber LowestNumberForKey (string key);
+
+		[Export ("allLowestNumberKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 79)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 79)]
+		NSObject [] AllLowestNumberKeys { get; }
+
+		[Export ("latestNumberForKey:")]
+		AGSyncableNumber LatestNumberForKey (string key);
+
+		[Export ("allLatestNumberKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 101)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 101)]
+		NSObject [] AllLatestNumberKeys { get; }
+
+		[Export ("highNumberListForKey:")]
+		AGSyncableNumberList HighNumberListForKey (string key);
+
+		[Export ("allHighNumberListKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 124)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 124)]
+		NSObject [] AllHighNumberListKeys { get; }
+
+		[Export ("lowNumberListForKey:")]
+		AGSyncableNumberList LowNumberListForKey (string key);
+
+		[Export ("allLowNumberListKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 147)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 147)]
+		NSObject [] AllLowNumberListKeys { get; }
+
+		[Export ("latestNumberListForKey:")]
+		AGSyncableNumberList LatestNumberListForKey (string key);
+
+		[Export ("allLatestNumberListKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 171)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 171)]
+		NSObject [] AllLatestNumberListKeys { get; }
+
+		[Export ("accumulatingNumberForKey:")]
+		AGSyncableAccumulatingNumber AccumulatingNumberForKey (string key);
+
+		[Export ("allAccumulatingNumberKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 193)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 193)]
+		NSObject [] AllAccumulatingNumberKeys { get; }
+
+		[Export ("latestStringForKey:")]
+		AGSyncableString LatestStringForKey (string key);
+
+		[Export ("allLatestStringKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 215)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 215)]
+		NSObject [] AllLatestStringKeys { get; }
+
+		[Export ("developerStringForKey:")]
+		AGSyncableDeveloperString DeveloperStringForKey (string key);
+
+		[Export ("allDeveloperStringKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 238)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 238)]
+		NSObject [] AllDeveloperStringKeys { get; }
+
+		[Export ("latestStringListForKey:")]
+		AGSyncableStringList LatestStringListForKey (string key);
+
+		[Export ("allLatestStringListKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 262)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 262)]
+		NSObject [] AllLatestStringListKeys { get; }
+
+		[Export ("stringSetForKey:")]
+		AGSyncableStringSet StringSetForKey (string key);
+
+		[Export ("allStringSetKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 284)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 284)]
+		NSObject [] AllStringSetKeys { get; }
+
+		[Export ("mapForKey:")]
+		AGGameDataMap MapForKey (string key);
+
+		[Export ("allMapKeys")]//, Verify ("ObjC method massaged into getter property", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 306)]//, Verify ("NSArray may be reliably typed, check the documentation", "/Users/matteo/Desktop/Headers/AGGameDataMap.h", Line = 306)]
+		NSObject [] AllMapKeys { get; }
+
+		[Field ("AGLeaderboardFilterFriendsAllTime", "__Internal")]
+		NSString AGLeaderboardFilterFriendsAllTime { get; }
+
+		[Field ("AGLeaderboardFilterGlobalAllTime", "__Internal")]
+		NSString AGLeaderboardFilterGlobalAllTime { get; }
+
+		[Field ("AGLeaderboardFilterGlobalDay", "__Internal")]
+		NSString AGLeaderboardFilterGlobalDay { get; }
+
+		[Field ("AGLeaderboardFilterGlobalWeek", "__Internal")]
+		NSString AGLeaderboardFilterGlobalWeek { get; }
+
+		[Field ("AGScoreFormatDuration", "__Internal")]
+		NSString AGScoreFormatDuration { get; }
+
+		[Field ("AGScoreFormatNumeric", "__Internal")]
+		NSString AGScoreFormatNumeric { get; }
+
+		[Field ("AGScoreFormatUnknown", "__Internal")]
+		NSString AGScoreFormatUnknown { get; }
+	}
+
 	[BaseType (typeof (NSObject))]
 	public partial interface AGScore {
 
@@ -693,8 +693,8 @@ namespace AmazonGameCircle {
 	[BaseType (typeof (NSObject))]
 	public partial interface AGWhispersync {
 
-//		[Export ("gameData", ArgumentSemantic.Retain)]
-//		AGGameDataMap GameData { get; }
+		[Export ("gameData", ArgumentSemantic.Retain)]
+		AGGameDataMap GameData { get; }
 
 		[Export ("flush")]
 		void Flush ();
